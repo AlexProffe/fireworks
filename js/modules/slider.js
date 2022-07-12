@@ -79,8 +79,9 @@ export function slider(selector, options = {}) {
             matchMedia(`(max-width:${mediaquery}px)`).matches &&
                 sliderMapItems.forEach((item) => {
                     slider.insertAdjacentHTML("beforeend", item.outerHTML);
-                    breakpointCheck();
+                   
                 });
+            breakpointCheck();
             sliderItems = slider.querySelectorAll(`${selector} > *`);
             recalculateSlider();
             isResized = false;
@@ -109,6 +110,7 @@ export function slider(selector, options = {}) {
     function breakpointCheck() {
        const keysArray = Object.keys(mergedOptions.breakpoints).filter(key => +key <= window.outerWidth);
        const lastIndex = keysArray[keysArray.length - 1];
+        console.log(mergedOptions.breakpoints[lastIndex]?.sliderPerPage ?? 1);
        sliderPerPage = mergedOptions.breakpoints[lastIndex]?.sliderPerPage ?? 1;
     }
 

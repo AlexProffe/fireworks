@@ -221,7 +221,7 @@ body {
   transition: 0.3s;
 }
 .header-phone:hover {
-  color: #EF4135;
+  color: #ef4135;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -259,7 +259,7 @@ body {
   transition: 0.3s color;
 }
 .header .menu-item:not(:last-child):hover {
-  color: #EF4135;
+  color: #ef4135;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -300,23 +300,6 @@ body {
 
 #services {
   padding: 50px 0;
-}
-#services-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: hidden;
-  width: 100%;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  gap: 40px;
-  -webkit-transition: 0.5s -webkit-transform;
-  transition: 0.5s -webkit-transform;
-  transition: 0.5s transform;
-  transition: 0.5s transform, 0.5s -webkit-transform;
-}
-#services-slider .service {
-  max-width: initial;
 }
 @media screen and (max-width: 861.01px) {
   #services .container {
@@ -396,5 +379,22 @@ body {
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
+}
+#services-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  gap: 40px;
+  -webkit-transition: 0.5s -webkit-transform;
+  transition: 0.5s -webkit-transform;
+  transition: 0.5s transform;
+  transition: 0.5s transform, 0.5s -webkit-transform;
+}
+#services-slider .service {
+  max-width: initial;
 }
 /*# sourceMappingURL=main.css.map */
