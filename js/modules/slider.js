@@ -174,6 +174,7 @@ export function slider(selector, options = {}) {
         let check = true;
         let subIndex = index;
         const difference = obj.startValue - value;
+        if(Math.abs(difference) < 50) return;
         const direction = difference < 0 ? -1 : 1;
         subIndex = direction === -1 ? --subIndex : ++subIndex;
        
