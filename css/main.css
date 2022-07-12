@@ -397,4 +397,8 @@ body {
 #services-slider .service {
   max-width: initial;
 }
+#services .section-title {
+  --section-title-color: #000;
+  margin-bottom: 35px;
+}
 /*# sourceMappingURL=main.css.map */
