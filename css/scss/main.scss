@@ -218,4 +218,11 @@
       max-width: initial;
     }
   }
+
+  .section-title {
+    --section-title-color: #000;
+    margin-bottom: 40px;
+
+    text-align: center;
+  }
 }
