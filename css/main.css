@@ -81,10 +81,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1220px;
-  width: 100%;
+  max-width: 1300px;
   padding: 0 10px;
   margin: 0 auto;
+  width: 100%;
   height: 100%;
 }
 
@@ -108,18 +108,28 @@ body {
   transition: 0.3s all;
 }
 
-.title {
-  font-size: 32px;
-  line-height: 36px;
-  margin-bottom: 16px;
-  text-align: center;
+.section-title {
+  --section-title-color: #fff;
+  font-size: clamp(24px, 48px, 6vw);
+  font-family: "Exo 2", sans-serif;
+  line-height: 1;
+  font-weight: bold;
+  color: var(--section-title-color);
+}
+@media screen and (max-width: 481.01px) {
+  .section-title {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
 }
 
-.excerpt {
-  font-size: 18px;
-  line-height: 20px;
-  margin-bottom: 32px;
-  text-align: center;
+.section-description {
+  --section-descriotion-color: #fff;
+  font-size: 24px;
+  font-family: "Exo 2", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--section-descriotion-color);
 }
 
 #welcome {
@@ -152,31 +162,6 @@ body {
   gap: 35px;
 }
 
-.section-title {
-  --section-title-color: #fff;
-  font-size: 48px;
-  font-family: "Exo 2", sans-serif;
-  line-height: 1;
-  font-weight: bold;
-  color: var(--section-title-color);
-}
-
-.section-description {
-  --section-descriotion-color: #fff;
-  font-size: 24px;
-  font-family: "Exo 2", sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: var(--section-descriotion-color);
-}
-
-.container {
-  max-width: 1300px;
-  padding: 0 10px;
-  width: 100%;
-  height: 100%;
-}
-
 .header {
   position: absolute;
   top: 0;
@@ -196,6 +181,22 @@ body {
       flex-wrap: wrap;
   z-index: 2;
 }
+@media screen and (max-width: 481.01px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    padding: 10px 15px;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+  }
+}
 .header-logo {
   font-size: 40px;
   line-height: 1;
@@ -203,8 +204,13 @@ body {
   color: white;
   text-transform: uppercase;
 }
+@media screen and (max-width: 481.01px) {
+  .header-logo {
+    text-align: center;
+  }
+}
 .header-phone {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -219,7 +225,7 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-@media screen and (max-width: 871.01px) {
+@media screen and (max-width: 1025.01px) {
   .header-phone {
     display: none;
   }
@@ -231,9 +237,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
-@media screen and (max-width: 871.01px) {
+@media screen and (max-width: 1025.01px) {
   .header .menu {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -245,7 +251,7 @@ body {
 }
 .header .menu-item {
   color: white;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -260,14 +266,14 @@ body {
 .header .menu-item:not(:nth-last-child(2))::after {
   content: "|";
   color: white;
-  margin-left: 15px;
+  margin-left: 10px;
 }
-@media screen and (max-width: 871.01px) {
+@media screen and (max-width: 1025.01px) {
   .header .menu-item:not(:nth-last-child(2))::after {
     content: "";
   }
 }
-@media screen and (max-width: 871.01px) {
+@media screen and (max-width: 1025.01px) {
   .header .menu-item:not(:last-child) {
     display: none;
   }
@@ -280,8 +286,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 28px;
 }
-@media screen and (max-width: 871.01px) {
+@media screen and (max-width: 1025.01px) {
   .header .menu-item:last-child {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -289,5 +296,105 @@ body {
     background: transparent;
     color: white;
   }
+}
+
+#services {
+  padding: 50px 0;
+}
+#services-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  gap: 40px;
+  -webkit-transition: 0.5s -webkit-transform;
+  transition: 0.5s -webkit-transform;
+  transition: 0.5s transform;
+  transition: 0.5s transform, 0.5s -webkit-transform;
+}
+#services-slider .service {
+  max-width: initial;
+}
+@media screen and (max-width: 861.01px) {
+  #services .container {
+    padding: 0;
+  }
+}
+#services .services-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media screen and (max-width: 861.01px) {
+  #services .services-wrapper {
+    display: none;
+  }
+}
+#services .services-slider {
+  position: relative;
+}
+#services .services-slider .slider-control {
+  top: 50%;
+  position: absolute;
+  background: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+  display: none;
+  font-size: 24px;
+}
+@media screen and (max-width: 861.01px) {
+  #services .services-slider .slider-control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+#services .services-slider .slider-control.left-control {
+  left: 30px;
+}
+#services .services-slider .slider-control.right-control {
+  right: 30px;
+}
+#services .service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 65px 10px;
+  max-width: 400px;
+  width: 100%;
+  border: 3px solid black;
+}
+#services .service-title {
+  margin: 40px 0 35px;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+#services .service-details {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
