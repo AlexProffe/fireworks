@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Фейерверки</title>
 </head>
+
 <body>
     <section id="welcome" aria-label="Мы делаем праздник для вас">
         <header class="header">
-            <a href="index.html" class="header-logo">
+            <a href="index.html" class="header-logo" tabindex="1">
                 Белый тигр
             </a>
             <nav class="header-menu menu">
-                <a href="#" class="menu-item">Главная</a>
-                <a href="#" class="menu-item">О нас</a>
-                <a href="#" class="menu-item">Услуги</a>
-                <a href="#" class="menu-item">Акции</a>
-                <a href="#" class="menu-item">Почему мы</a>
-                <a href="#" class="menu-item">Галерея</a>
-                <button id="burger-open" class="menu-item">
+                <a href="index.html" class="menu-item" tabindex="1">Главная</a>
+                <a href="#" class="menu-item" tabindex="1">О нас</a>
+                <a href="#services" class="menu-item" tabindex="1">Услуги</a>
+                <a href="#" class="menu-item" tabindex="1">Акции</a>
+                <a href="#qualities" class="menu-item" tabindex="1">Почему мы</a>
+                <a href="#clients" class="menu-item" tabindex="1">Галерея</a>
+                <button id="burger-open" class="menu-item" tabindex="1">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </nav>
-            <article class="header-socials">
+            <article class="header-info">
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/salutshow.by/" class="header-social" aria-label="Инстаграм"
+                        tabindex="1" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://vk.com/white_tiger_fireworks_show" class="header-social"
+                        aria-label="Группа вконтакте" tabindex="1" target="_blank">
+                        <i class="fa-brands fa-vk"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCzDuERXxJMkhsB5MIUCmSSg" class="header-social"
+                        aria-label="Youtube-канал" tabindex="1" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/" class="header-social" aria-label="Tiktok" tabindex="1"
+                        target="_blank">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
                 <a href="tel:+375291340005" class="header-phone">
                     +375 29 134-00-05
                 </a>
@@ -39,81 +61,168 @@
         <div class="container">
             <h1 class="welcome-title section-title">Мы делаем праздник для вас</h1>
             <p class="welcome-description section-description">Фейерверк-шоу любого уровня сложности</p>
+            <button class="welcome-button" tabindex="1" aria-label="Заказать расчёт">
+                Заказать расчёт
+            </button>
         </div>
     </section>
     <section id="services" aria-label="Услуги">
-        <h2 class="section-title">
-            Услуги
-        </h2>
         <div class="container">
+            <h2 class="section-title">
+                Услуги
+            </h2>
+            <p class="section-description">Полный спектр услуг от команды профессионалов, которая работает с 2010 года
+                на территории Беларуси</p>
             <div class="services-wrapper">
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
                 <article class="service">
                     <div class="service-image">
                         <img src="assets/trophy.svg" alt="Service trophy">
                     </div>
                     <h3 class="service-title">High Quality</h3>
-                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                    <p class="service-details">There are many variations of passages of Lorem Ipsum available, but the
+                        majority.</p>
                 </article>
-                
+
             </div>
-            <div class="services-slider" >
-                <div id="services-slider" data-mediaquery="860" data-component="slider" data-items=".services-wrapper"></div>
+            <div class="services-slider">
+                <div id="services-slider" data-mediaquery="860" data-component="slider">
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                    <article class="service">
+                        <div class="service-image">
+                            <img src="assets/trophy.svg" alt="Service trophy">
+                        </div>
+                        <h3 class="service-title">High Quality</h3>
+                        <p class="service-details">There are many variations of passages of Lorem Ipsum available, but
+                            the majority.</p>
+                    </article>
+                </div>
                 <button class="slider-control left-control">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
@@ -124,6 +233,332 @@
         </div>
     </section>
 
+    <section id="equipment" aria-label="Оборудование">
+        <div class="container">
+            <h2 class="section-title" aria-label="Оборудование">Оборудование</h2>
+            <p class="section-description">Мы используем самое современное и лучше оборудование для организации салютов
+                и фейерверков</p>
+            <div class="equipment-wrapper">
+                <article class="equipment">
+                    <div class="equipment-icon">
+                        <img src="assets/firework.svg" alt="Firework icon">
+                    </div>
+                    <h3 class="equipment-title">Салюты</h3>
+                    <p class="equipment-description">Самый широкий выбор различных салютов</p>
+                    <a href="#" class="equipment-link">Подробнее</a>
+                </article>
+                <article class="equipment">
+                    <div class="equipment-icon">
+                        <img src="assets/firework-station.svg" alt="Firework station icon">
+                    </div>
+                    <h3 class="equipment-title">Пусковые установки</h3>
+                    <p class="equipment-description">Лучшие пусковые установки</p>
+                    <a href="#" class="equipment-link">Подробнее</a>
+                </article>
+                <article class="equipment">
+                    <div class="equipment-icon">
+                        <img src="assets/firework-fontain.svg" alt="Firework fontain station">
+                    </div>
+                    <h3 class="equipment-title">Фонтаны пиротехнические</h3>
+                    <p class="equipment-description">Всевозможные варианты пиротехнических фонтанов</p>
+                    <a href="#" class="equipment-link">Подробнее</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="clients">
+        <div class="container">
+            <h2 class="section-title"><span>НАМ ДОВЕРЯЮТ</span></h2>
+            <div class="swiper clients__slider">
+                <div class="swiper-wrapper clients__wrapper">
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/12.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/11.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/10.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/9.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/8.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/7.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/6.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/5.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/4.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/3.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/2.png" alt="">
+                    </div>
+                    <div class="swiper-slide clients__slide">
+                        <img src="http://white-tiger.lunaweb.by/wp-content/uploads/2022/03/1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualities">
+        <div class="container">
+            <h2 class="section-title">
+                ПОЧЕМУ МЫ
+            </h2>
+            <p class="section-description">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+            </p>
+            <div class="qualities-wrapper">
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework-fontain.svg" alt="Firework fontain icon">
+                    </div>
+                    <h3 class="quality-title">У нас лучшие технологии</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework-station.svg" alt="Firework station icon">
+                    </div>
+                    <h3 class="quality-title">У нас огромный опыт</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework.svg" alt="Firework icon">
+                    </div>
+                    <h3 class="quality-title">Огромный ассортимент феерверков</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework-fontain.svg" alt="Firework fontain icon">
+                    </div>
+                    <h3 class="quality-title">Мы имеем все разрешающие документы</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework-fontain.svg" alt="Firework fontain icon">
+                    </div>
+                    <h3 class="quality-title">Вам не надо думать, мы сделаем все за вас</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+                <article class="quality">
+                    <div class="quality-icon">
+                        <img src="assets/firework-fontain.svg" alt="Firework fontain icon">
+                    </div>
+                    <h3 class="quality-title">Мы лучшие на рынке</h3>
+                    <p class="quality-description">
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Курсивных
+                        lorem власти буквоград всеми?
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="swiper reviews-client">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide reviews-client__slide">
+                        <div class="reviews-client__ttl">
+                            Салют 
+                        </div>
+                        <div class="reviews-client__date">10 Мар 2022</div>
+                        <div class="reviews-client__txt">
+                            Спасибо большое команде «Белый Тигр» за красивый салют, помогают во всем, в любое время,
+                                всегда ответят на любые вопросы, все было очень красиво, салют был главной изюминкой на
+                                нашем вечере!!!!!
+                                Спасибо ещё раз!
+                        </div>
+                        <div class="reviews-client__name">Анастасия</div>
+                    
+                    </div>
+
+
+                    <div class="swiper-slide reviews-client__slide">
+                        <div class="reviews-client__ttl">
+                            Свадебный салют! </div>
+                        <div class="reviews-client__date">10 Сен 2021</div>
+                        <div class="reviews-client__txt">
+                            Самые лучшие!
+                                Огромное спасибо за наш свадебный салют! Все гости были в абсолютном восторге! И
+                                отдельное спасибо за техника, к сожалению имя забыла, но это был абсолютнейший
+                                профессионал своего дела! Мужчина приехал заранее, осмотрел территорию и было решено
+                                переиграть сценарий салюта, чтобы обеспечить безопасность всем нам! Вот прям командно
+                                сработали! А эффект получился наверно даже интересней, нежели первоначальная задумка!
+                                Бюджет у нас был очень и очень скромный, поэтому мы вообще не ожидали увидеть то, что
+                                увидели! СПАСИБО!!!!!!!
+                        </div>
+                        <div class="reviews-client__name">Ирина</div>
+                       
+                    </div>
+
+
+                    <div class="swiper-slide reviews-client__slide">
+                        <div class="reviews-client__ttl">
+                            Фейерверк на свадьбу </div>
+                        <div class="reviews-client__date">8 Июн 2019</div>
+                        <div class="reviews-client__txt">
+                           Заказывали фейерверк на свадьбу 08.06.2019!)Фейерверк очень понравился и нам, и гостям,
+                                получился таким разнообразным, насыщенным, были учтены все наши пожелания) С соседнего
+                                дома подошёл к нам молодой человек,поинтересовался,что за салют такой красивый, сказал,
+                                что хотят заказать себе на свадьбу такой, так мы порекомендовали вас! Спасибо большое!
+                            
+                        </div>
+                        <div class="reviews-client__name">Екатерина</div>
+                       
+                    </div>
+
+
+                    <div class="swiper-slide reviews-client__slide">
+                        <div class="reviews-client__ttl">
+                            Наземное пиротехническое шоу </div>
+                        <div class="reviews-client__date">1 Июн 2019</div>
+                        <div class="reviews-client__txt">
+                           Свадьба 01.06.2019. Обратились в Белый Тигр для помощи в организации салюта. Но вместо
+                                салюта мы получили результат во много раз лучше, чем мы могли представить. Когда мы
+                                приехали к ним в офис для обсуждения условий, мы увидели, что каждый сотрудник, включая
+                                директора, полностью погружается в нашу задачу, мы не успевали осознавать, что и как,
+                                как от ребят появлялись с каждой минутой идеи лучше и лучше. В итоге мы сошлись на
+                                наземном пиротехническом шоу, какое было организовано и исполнено на высочайшем уровне.
+                            Большое спасибо, обязательно всем рекомендуем и будем рекомендовать!
+                        </div>
+                        <div class="reviews-client__name">Виталий</div>
+                    </div>
+                </div>
+                <div class="swiper-pagination reviews-client__pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer-logo">
+                Белый тигр
+            </a>
+            <h2 class="footer-title">Наши контакты</h2>
+            <ul class="contacts-list">
+                <li class="list-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="https://yandex.by/maps/org/bely_tigr/179027755904/?from=api-maps&ll=27.528629%2C53.917983&origin=jsapi_2_1_79&z=18.86">г. Минск, Ул.Тарханова, 13-3Н</a>
+                </li>
+                <li class="list-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:Salut_show@mail.ru">Salut_show@mail.ru</a>
+                </li>
+                <li class="list-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel+375291340005">+375 29 134-000-5</a>
+                </li>
+                <li class="list-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+375291840002">+375 29 184-000-2</a>
+                </li>
+                <li class="list-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+3751736488911">факс +375 17 364-88-911</a>
+                </li>
+            </ul>
+            <div class="header-socials">
+                <a href="https://www.instagram.com/salutshow.by/" class="header-social" aria-label="Инстаграм"
+                    tabindex="1" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://vk.com/white_tiger_fireworks_show" class="header-social"
+                    aria-label="Группа вконтакте" tabindex="1" target="_blank">
+                    <i class="fa-brands fa-vk"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCzDuERXxJMkhsB5MIUCmSSg" class="header-social"
+                    aria-label="Youtube-канал" tabindex="1" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/" class="header-social" aria-label="Tiktok" tabindex="1"
+                    target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <h3 class="footer-company">© ООО «Белый Тигр»</h3>
+                <p class="footer-date">2010-2022</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="burger">
+        <div class="burger-content">
+            <a href="#" class="burger-logo">Белый тигр</a>
+            <nav class="burger-menu">
+                <a href="index.html" class="menu-item" tabindex="1">Главная</a>
+                <a href="#" class="menu-item" tabindex="1">О нас</a>
+                <a href="#services" class="menu-item" tabindex="1">Услуги</a>
+                <a href="#" class="menu-item" tabindex="1">Акции</a>
+                <a href="#qualities" class="menu-item" tabindex="1">Почему мы</a>
+                <a href="#clients" class="menu-item" tabindex="1">Галерея</a>
+            </nav>
+            <div class="header-socials">
+                <a href="https://www.instagram.com/salutshow.by/" class="header-social" aria-label="Инстаграм"
+                    tabindex="1" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://vk.com/white_tiger_fireworks_show" class="header-social"
+                    aria-label="Группа вконтакте" tabindex="1" target="_blank">
+                    <i class="fa-brands fa-vk"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCzDuERXxJMkhsB5MIUCmSSg" class="header-social"
+                    aria-label="Youtube-канал" tabindex="1" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/" class="header-social" aria-label="Tiktok" tabindex="1"
+                    target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+            <a href="tel:+375291340005" class="header-phone">
+                +375 29 134-00-05
+            </a>
+        </div>
+        <button id="close-burger">
+            <i class="fa-solid fa-times"></i>
+        </button>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
-</html> 
+
+</html>

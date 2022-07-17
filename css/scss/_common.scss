@@ -33,12 +33,13 @@ body {
 }
 
 .section-title {
-    --section-title-color: #fff;
+    --section-title-color: #333;
 
     font-size: clamp(24px, 48px, 6vw);
     font-family: 'Exo 2', sans-serif;
     line-height: 1;
     font-weight: bold;
+    text-align: center;
     color: var(--section-title-color);  
 
     @media screen and (max-width: 481.01px) {
@@ -49,11 +50,12 @@ body {
 }
 
 .section-description {
-    --section-descriotion-color: #fff;
+    --section-description-color: #333;
 
     font-size: 24px;
     font-family: 'Exo 2', sans-serif;
     line-height: 1;
     font-weight: 400;
-    color: var(--section-descriotion-color);  
+    text-align: center;
+    color: var(--section-description-color);  
 }
