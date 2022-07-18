@@ -125,7 +125,7 @@ export function slider(selector, options = {}) {
     let obj = {};
     slider.addEventListener('touchstart', e => {
         obj.startValue = e.changedTouches[0].screenX;
-    })
+    }, {passive: true})
 
     slider.addEventListener('touchend', e => {
         calculateTouchEvent(e.changedTouches[0].screenX);
@@ -142,3 +142,4 @@ export function slider(selector, options = {}) {
 
     rangeCheck();
 }
+
