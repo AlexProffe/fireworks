@@ -97,10 +97,63 @@ const reviewersSlider = new Swiper('.reviews-client', {
 		},
 
 	},
+});
 
-	on: {
-		lazyImageReady: function () {
-			ibg();
+const sliderIntro = new Swiper('.intro__slider', {
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true
+	},
+	autoplay: {
+		delay: 2000,
+	},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	speed: 1000,
+});
+
+const qualitiesSlider = new Swiper('.why__slider', {
+	autoplay: {
+		delay: 0,
+		disableOnInteraction: false,
+		waitForTransition: true,
+	},
+	centerInsufficientSlides: true,
+	slidesPerView: 8,
+	spaceBetween: 40,
+	autoHeight: false,
+	speed: 3000,
+	breakpoints: {
+		320: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+
 		},
-	}
+		440: {
+			slidesPerView: 4,
+			spaceBetween: 10,
+
+
+		},
+		576: {
+			slidesPerView: 5,
+			spaceBetween: 10,
+
+		},
+		768: {
+			slidesPerView: 6,
+			spaceBetween: 20,
+		},
+		992: {
+			slidesPerView: 7,
+			spaceBetween: 20,
+		},
+		1400: {
+			slidesPerView: 9,
+			spaceBetween: 20,
+		},
+
+	},
 });
