@@ -22,7 +22,6 @@ nav, footer, header, aside {
 }
 
 html, body {
-  height: 100%;
   width: 100%;
   font-size: 100%;
   line-height: 1;
@@ -124,6 +123,15 @@ body {
   }
 }
 
+.section-subtitle {
+  font-size: 22px;
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
+  color: white;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 5px;
+}
+
 .section-description {
   --section-description-color: #333;
   font-size: 24px;
@@ -146,6 +154,10 @@ body {
 
 html, body {
   scroll-behavior: smooth;
+}
+
+.html-no-scroll {
+  overflow: hidden;
 }
 
 .intro__slider {
@@ -288,7 +300,7 @@ html, body {
 .header-logo {
   font-size: 40px;
   line-height: 1;
-  font-family: "Bad Script", cursive;
+  font-family: "Exo 2", sans-serif;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
@@ -373,8 +385,8 @@ html, body {
   margin-bottom: 16px;
 }
 .header-socials .header-social {
-  font-size: 28px;
-  width: 28px;
+  font-size: 32px;
+  width: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -608,6 +620,7 @@ html, body {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: #fff;
+  text-align: center;
 }
 #services .service-details {
   font-size: 18px;
@@ -686,6 +699,11 @@ html, body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+@media screen and (max-width: 540.01px) {
+  #equipment .equipment-wrapper {
+    gap: 8px;
+  }
 }
 #equipment .equipment-title {
   font-size: 24px;
@@ -906,6 +924,33 @@ html, body {
   background: url("../assets/footer.jpg") no-repeat center/cover;
   z-index: 0;
 }
+.footer .welcome-button {
+  max-width: 300px;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 16px 0;
+  font-size: 24px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.footer .welcome-button:hover, .footer .welcome-button:focus {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.4s background-color, 0.4s color;
+  transition: 0.4s background-color, 0.4s color;
+  background-color: #fff;
+  color: #ef4135;
+  border-color: #ef4135;
+}
+@media screen and (max-width: 640px) {
+  .footer .welcome-button {
+    margin-top: 16px;
+  }
+}
 .footer::before {
   position: absolute;
   content: "";
@@ -920,6 +965,16 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 48px 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer-group {
+  max-width: 360px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -931,7 +986,7 @@ html, body {
   line-height: 1;
   margin-bottom: 24px;
   text-transform: uppercase;
-  font-family: "Bad Script", cursive;
+  font-family: "Exo 2", sans-serif;
 }
 .footer-title {
   color: #fff;
@@ -949,7 +1004,6 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 24px;
-  margin-bottom: 24px;
 }
 .footer .contacts-list .list-item {
   font-size: 18px;
@@ -993,11 +1047,11 @@ html, body {
 .footer .header-socials {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 .footer .header-socials .header-social {
-  font-size: 32px;
-  width: 32px;
+  font-size: 40px;
+  width: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1012,6 +1066,8 @@ html, body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1091,7 +1147,7 @@ html, body {
   font-size: 40px;
   margin-bottom: 24px;
   color: #000;
-  font-family: "Bad Script", cursive;
+  font-family: "Exo 2", sans-serif;
   text-transform: uppercase;
 }
 #burger .burger-menu {
@@ -1140,5 +1196,179 @@ html, body {
 
 .why__slider {
   width: 100%;
+}
+
+#modal {
+  position: fixed;
+  z-index: -1;
+  visibility: hidden;
+  pointer-events: none;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+#modal #close-modal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  background: transparent;
+  color: #fff;
+}
+@media screen and (max-width: 480.01px) {
+  #modal #close-modal {
+    color: #000;
+  }
+}
+#modal.visible {
+  z-index: 3;
+  visibility: visible;
+  pointer-events: unset;
+}
+#modal .modal-content {
+  background-color: white;
+  padding: 48px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+#modal .modal-content.hidden {
+  display: none;
+}
+#modal .modal-title {
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 540.01px) {
+  #modal .modal-title {
+    font-size: 28px;
+    letter-spacing: -1.5px;
+  }
+}
+#modal .modal-description {
+  margin-bottom: 36px;
+}
+@media screen and (max-width: 540.01px) {
+  #modal .modal-description {
+    margin-bottom: 24px;
+  }
+}
+#modal .modal-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 64px 32px;
+  max-width: 768px;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768.01px) {
+  #modal .modal-info {
+    padding: 32px 16px;
+  }
+}
+@media screen and (max-width: 768.01px) {
+  #modal .modal-info .section-title {
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: -1.5px;
+  }
+}
+#modal .modal-info.hidden {
+  display: none;
+}
+#modal .modal-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+@media screen and (max-width: 540.01px) {
+  #modal .modal-form {
+    gap: 16px;
+  }
+}
+#modal .modal-form button {
+  margin-top: 16px;
+  max-width: 300px;
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid #ef4135;
+  padding: 12px 0;
+  font-size: 24px;
+  color: #333;
+  text-transform: uppercase;
+  line-height: 1;
+  -webkit-transition: 0.4s background-color, 0.4s color;
+  transition: 0.4s background-color, 0.4s color;
+}
+#modal .modal-form button:hover, #modal .modal-form button:focus {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.4s background-color, 0.4s color;
+  transition: 0.4s background-color, 0.4s color;
+  background-color: #ef4135;
+  color: #fff;
+}
+#modal .modal-form label {
+  width: 100%;
+  max-width: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#modal .modal-form .form-control {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1;
+  padding: 10px 16px;
+  border: 1px solid black;
+  font-family: "Exo 2", sans-serif;
+}
+@media screen and (max-width: 540.01px) {
+  #modal .modal-form .form-control {
+    font-size: 18px;
+  }
+}
+#modal .modal-form .form-checkbox {
+  width: 18px;
+  height: 18px;
 }
 /*# sourceMappingURL=main.css.map */
