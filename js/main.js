@@ -1,25 +1,38 @@
 import {slider} from "./modules/slider.js";
 import {burger} from "./modules/burger.js";
+import {modal} from "./modules/modal.js";
+
 
 
 slider("#services-slider", {});
-burger()
+burger();
+modal();
 
 const header = document.querySelector('header');
-const sections = document.querySelectorAll('section');
-const intersection = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.id.replace('#', '') === 'welcome' ?  header.classList.remove('_light') : header.classList.add('_light')
-        }
-    })
-}, {
-    threshold: 0.55,
-});
 
-sections.forEach(section => {
-    intersection.observe(section);
+window.addEventListener('scroll', () => {
+	if(window.pageYOffset > 20 ) {
+		header.classList.add('_light');
+	} else {
+		header.classList.remove('_light');
+	}
 })
+
+
+// const sections = document.querySelectorAll('section');
+// const intersection = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if(entry.isIntersecting) {
+//             entry.target.id.replace('#', '') === 'welcome' ?  header.classList.remove('_light') : header.classList.add('_light')
+//         }
+//     })
+// }, {
+//     threshold: 0.55,
+// });
+
+// sections.forEach(section => {
+//     intersection.observe(section);
+// })
 
 const clientsSlider= new Swiper('.clients__slider', {
 	autoplay: {
@@ -81,6 +94,7 @@ const reviewersSlider = new Swiper('.reviews-client', {
 		el: ".reviews-client__pagination",
 		clickable: true,
 	},
+	autoHeight: true,
 
 	breakpoints: {
 		320: {
