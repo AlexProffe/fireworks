@@ -18,22 +18,6 @@ window.addEventListener('scroll', () => {
 	}
 })
 
-
-// const sections = document.querySelectorAll('section');
-// const intersection = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if(entry.isIntersecting) {
-//             entry.target.id.replace('#', '') === 'welcome' ?  header.classList.remove('_light') : header.classList.add('_light')
-//         }
-//     })
-// }, {
-//     threshold: 0.55,
-// });
-
-// sections.forEach(section => {
-//     intersection.observe(section);
-// })
-
 const clientsSlider= new Swiper('.clients__slider', {
 	autoplay: {
 		delay: 0,

@@ -1,0 +1,175 @@
+@import "../common/clear";
+@import "../common/common";
+@import "../common/vars";
+
+@import '../common/header';
+@import '../common/footer';
+
+#portfolio {
+    padding: 50px 0;
+
+    .section-title {
+        margin-bottom: 48px;
+    }
+
+    .portfolio {
+        display: grid;
+        grid-template-columns: 250px auto;
+        gap: 32px;
+
+        @media screen and (max-width: 960.01px) {
+            grid-template-columns: unset;
+        }
+
+        &-grid {
+            --grid-rows-count: 2;
+            --grid-columns-count: 3; 
+
+            display: grid;
+            grid-template-columns: repeat(var(--grid-columns-count), 1fr);
+            grid-template-rows: repeat(var(--grid-rows-count), 300px);
+            gap: 24px 16px;
+
+            @media screen and (max-width: 768.01px) {
+                --grid-columns-count: 2; 
+            }
+
+            @media screen and (max-width: 640.01px) {
+                --grid-columns-count: 1; 
+            }
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            @include _blackout();
+
+            &::before {
+                z-index: unset;
+            }
+
+            &__image {
+                height: 100%;
+
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            &__content {
+                visibility: hidden;
+                position: absolute;
+                display: flex;
+                gap: 24px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+                inset: 0;
+            }
+
+            &__title {
+                color: #fff;
+                font-family: 'Exo 2', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                font-size: 24px;
+            }
+
+            &__button {
+                color: #fff;
+                font-family: 'Exo 2', sans-serif;
+                font-size: 18px;
+                padding: 8px 0;
+                max-width: 240px;
+                width: 100%;
+                border: 2px solid white;
+            }
+
+            &:hover {
+                .portfolio-item__content {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &-filter {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (max-width: 960.01px) {
+                max-width: 480px;
+                width: 100%;
+                justify-self: center;
+            }
+
+            .filter {
+                &-trigger {
+                    border: 2px solid black;
+                    width: 100%;
+                    padding: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                &-content {
+                    max-height: 0;
+                    min-height: fit-content;
+                    will-change: max-height, min-height;
+                    opacity: 0;
+                    overflow-y: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 16px;
+                    gap: 16px;
+                    transition: all 0.55s ease-out;
+                    border: 2px solid black;
+
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: gold;
+                        border-radius: 20px;    
+                        border: 3px solid gold;   /* roundness of the scroll thumb */
+                      }
+
+                    &.visible {
+                        opacity: 1;
+                        max-height: 300px;
+                        padding: 16px;
+                    }
+                }
+
+                &-control {
+                    padding: 8px;
+                    font-size: 20px;
+                    font-family: 'Exo 2', sans-serif;
+                    line-height: 24px;
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    input {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                &-button {
+                    border: 2px solid black;
+                    width: 100%;
+                    margin-top: 16px;
+                    padding: 8px;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@import '../common/preview';
