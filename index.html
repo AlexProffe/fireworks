@@ -20,7 +20,7 @@
 
 <body>
     <section id="welcome" aria-label="Мы делаем праздник для вас">
-        <header class="header">
+        <header class="header _fixed">
             <a href="index.html" class="header-logo" tabindex="1">
                 Белый тигр
             </a>
@@ -30,7 +30,7 @@
                 <a href="#services" class="menu-item" tabindex="1">Услуги</a>
                 <a href="#" class="menu-item" tabindex="1">Акции</a>
                 <a href="#qualities" class="menu-item" tabindex="1">Почему мы</a>
-                <a href="#clients" class="menu-item" tabindex="1">Галерея</a>
+                <a href="pages/portfolio.html" class="menu-item" tabindex="1">Галерея</a>
                 <button id="burger-open" class="menu-item" tabindex="1">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -536,16 +536,16 @@
         </div>
     </footer>
 
-    <div id="burger">
+    <div id="burger" style="display: none;">
         <div class="burger-content">
-            <a href="#" class="burger-logo">Белый тигр</a>
+            <a href="index.html" class="burger-logo">Белый тигр</a>
             <nav class="burger-menu">
                 <a href="index.html" class="menu-item" tabindex="1">Главная</a>
                 <a href="#" class="menu-item" tabindex="1">О нас</a>
                 <a href="#services" class="menu-item" tabindex="1">Услуги</a>
                 <a href="#" class="menu-item" tabindex="1">Акции</a>
                 <a href="#qualities" class="menu-item" tabindex="1">Почему мы</a>
-                <a href="#clients" class="menu-item" tabindex="1">Галерея</a>
+                <a href="pages/portfolio.html" class="menu-item" tabindex="1">Галерея</a>
             </nav>
             <div class="header-socials">
                 <a href="https://www.instagram.com/salutshow.by/" class="header-social" aria-label="Инстаграм"
@@ -564,29 +564,6 @@
             </a>
         </div>
         <button id="close-burger">
-            <i class="fa-solid fa-times"></i>
-        </button>
-    </div>
-
-    <div id="modal">
-        <div class="modal-content">
-            <h2 class="section-title modal-title">Заказать фейерверк по акции</h2>
-            <p class="section-description modal-description">Менеджер свяжется с Вами для уточнения деталей</p>
-            <form action="sendmail.php" class="modal-form">
-                <label for="name"><input class="form-control" type="text" placeholder="Имя" id="name" required="true" minlength="2"></label>
-                <label for="phone"><input class="form-control" type="text" placeholder="Телефон" id="phone" required="true" minlength="9"></label>
-                <label for="city"><input class="form-control" type="text" placeholder="Город" required="true" minlength="3"></label>
-                <label>
-                    <input type="checkbox" name="accept-personal-info" class="form-checkbox" required="true">
-                    Согласен на обработку персональных данных
-                </label>
-                <button type="submit">Отправить</button>
-            </form>
-        </div>
-        <div class="modal-info hidden">
-            <h2 class="section-title">Сообщение успешно отправлено, благодарим вас за ваше cообщение</h2>
-        </div>
-        <button id="close-modal">
             <i class="fa-solid fa-times"></i>
         </button>
     </div>

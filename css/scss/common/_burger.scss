@@ -1,0 +1,93 @@
+#burger {
+  position: fixed;
+  z-index: -1;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  transition: 0.4s visibility;
+
+  &.visible {
+    visibility: visible;
+    z-index: 3;
+    transition: 0.4s visibility;
+  }
+
+  #close-burger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    background: transparent;
+    color: #fff;
+
+    @media screen and (max-width: 480.01px) {
+      color: #000;
+    }
+  }
+
+  .burger {
+    &-content {
+      padding: 20px 0 20px 20px;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      height: 100%;
+
+      @media screen and (max-width: 480.01px) {
+        max-width: unset;
+      }
+    }
+
+    &-logo {
+      font-size: 40px;
+      margin-bottom: 24px;
+      color: #000;
+      font-family: "Exo 2", sans-serif;
+      text-transform: uppercase;
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+
+      .menu-item {
+        font-size: 20px;
+        font-family: "Exo 2", sans-serif;
+        color: #000;
+      }
+    }
+  }
+
+  .header {
+    &-socials {
+      flex-basis: initial;
+      margin-bottom: 24px;
+
+      .header-social {
+        width: 32px;
+        color: #000;
+        font-size: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      align-self: flex-start;
+    }
+
+    &-phone {
+      color: #000;
+      display: flex;
+    }
+  }
+}

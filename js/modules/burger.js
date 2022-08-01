@@ -1,5 +1,3 @@
-
-
 export function burger() {
     const burgerModal = document.getElementById("burger");
     const burgerModalContent = document.querySelector(".burger-content");
@@ -7,6 +5,8 @@ export function burger() {
     const closeModalButton = document.getElementById("close-burger");
     const links = burgerModalContent.querySelectorAll('*');
     const htmlElement = document.querySelector(".html");
+
+    burgerModal.style.display = null;
 
     links.forEach(link => {
         link.addEventListener('click', () => {
