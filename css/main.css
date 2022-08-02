@@ -189,7 +189,7 @@ body {
   color: #333;
 }
 .header._light .header-logo:hover, .header._light .header-logo:active, .header._light .header-logo:focus {
-  color: #ef4135;
+  color: #ffbf00;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -203,7 +203,7 @@ body {
   color: #333;
 }
 .header._light .header-phone:hover, .header._light .header-phone:active, .header._light .header-phone:focus {
-  color: #ef4135;
+  color: #ffbf00;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -249,7 +249,7 @@ body {
           align-items: center;
 }
 .header-logo:active, .header-logo:hover, .header-logo:focus {
-  color: #ef4135;
+  color: #ffbf00;
 }
 @media screen and (max-width: 1140.01px) {
   .header-logo {
@@ -276,7 +276,7 @@ body {
   transition: 0.3s;
 }
 .header-phone:hover, .header-phone:active, .header-phone:focus {
-  color: #ef4135;
+  color: #ffbf00;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -335,7 +335,7 @@ body {
   transition: 0.3s;
 }
 .header-socials .header-social:hover, .header-socials .header-social:active, .header-socials .header-social:focus {
-  color: #ef4135;
+  color: #ffbf00;
 }
 .header .menu {
   display: -webkit-box;
@@ -366,7 +366,7 @@ body {
   transition: 0.3s color;
 }
 .header .menu-item:not(:last-child):hover, .header .menu-item:not(:last-child):active, .header .menu-item:not(:last-child):focus {
-  color: #ef4135;
+  color: #ffbf00;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -533,14 +533,14 @@ body {
   -webkit-transition: 0.4s background-color, 0.4s color;
   transition: 0.4s background-color, 0.4s color;
   background-color: #fff;
-  color: #ef4135;
-  border-color: #ef4135;
+  color: #ffbf00;
+  border-color: #ffbf00;
 }
 #welcome .section-subtitle {
   --section-subtitle-color: #fff;
 }
 #welcome .welcome-title {
-  --section-title-color: #ef4135;
+  --section-title-color: #ffbf00;
 }
 #welcome .welcome-description {
   --section-description-color: #fff;
@@ -859,7 +859,7 @@ body {
   left: 10px;
 }
 #equipment .equipment-icon img {
-  color: #ef4135;
+  color: #ffbf00;
 }
 
 #qualities {
@@ -924,7 +924,7 @@ body {
           flex-direction: column;
 }
 #qualities .qualities-wrapper .quality-title {
-  color: #ef4135;
+  color: #ffbf00;
   font-size: 24px;
   font-family: "Exo 2", sans-serif;
   margin-bottom: 16px;
@@ -1016,7 +1016,7 @@ body {
   font-size: 20px;
   margin-bottom: 5px;
   font-family: "Exo 2", sans-serif;
-  color: #ef4135;
+  color: #ffbf00;
 }
 
 .why__slider {
@@ -1048,8 +1048,8 @@ body {
   -webkit-transition: 0.4s background-color, 0.4s color;
   transition: 0.4s background-color, 0.4s color;
   background-color: #fff;
-  color: #ef4135;
-  border-color: #ef4135;
+  color: #ffbf00;
+  border-color: #ffbf00;
 }
 @media screen and (max-width: 640px) {
   .footer .welcome-button {
@@ -1152,7 +1152,7 @@ body {
 .footer .header-socials {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-bottom: 0;
+  margin: 24px 0;
 }
 .footer .header-socials .header-social {
   font-size: 40px;
@@ -1324,7 +1324,7 @@ body {
   max-width: 300px;
   width: 100%;
   background-color: transparent;
-  border: 3px solid #ef4135;
+  border: 3px solid #ffbf00;
   padding: 12px 0;
   font-size: 24px;
   color: #333;
@@ -1338,7 +1338,7 @@ body {
           transform-origin: center;
   -webkit-transition: 0.4s background-color, 0.4s color;
   transition: 0.4s background-color, 0.4s color;
-  background-color: #ef4135;
+  background-color: #ffbf00;
   color: #fff;
 }
 #modal .modal-form label {
@@ -1359,6 +1359,9 @@ body {
   padding: 10px 16px;
   border: 1px solid black;
   font-family: "Exo 2", sans-serif;
+}
+#modal .modal-form .form-control.form-control-2x {
+  min-height: 100px;
 }
 @media screen and (max-width: 540.01px) {
   #modal .modal-form .form-control {

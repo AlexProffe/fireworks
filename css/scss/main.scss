@@ -31,8 +31,8 @@
       transform-origin: center;
       transition: 0.4s background-color, 0.4s color;
       background-color: #fff;
-      color: #ef4135;
-      border-color: #ef4135;
+      color: #ffbf00;
+      border-color: #ffbf00;
     }
   }
 
@@ -41,7 +41,7 @@
   }
 
   .welcome-title {
-    --section-title-color: #ef4135;
+    --section-title-color: #ffbf00;
   }
 
   .welcome-description {
@@ -319,7 +319,7 @@
       left: 10px;
 
       img {
-        color: #ef4135;
+        color: #ffbf00;
       }
     }
 
@@ -382,7 +382,7 @@
       flex-direction: column;
 
       &-title {
-        color: #ef4135;
+        color: #ffbf00;
         font-size: 24px;
         font-family: "Exo 2", sans-serif;
         margin-bottom: 16px;
@@ -468,7 +468,7 @@
     font-size: 20px;
     margin-bottom: 5px;
     font-family: "Exo 2", sans-serif;
-    color: #ef4135;
+    color: #ffbf00;
   }
 }
 

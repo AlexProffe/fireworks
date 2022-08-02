@@ -7,32 +7,71 @@ html, body {
 }
 
 .quiz {
-    &-header, &-footer {
-        .logo {
-            max-width: 320px;
-            width: 100%;
-            display: flex;
-        }
+    &-header {
 
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         background-color: lightgray;
-        flex-direction: column;
         align-items: center;
+        gap: 16px 32px;
         padding: 16px;
+        
 
         .section-title {
             margin: 24px 0;
+            text-transform: uppercase;
+            font-size: 64px;
+
+            @media screen and (max-width: 540.01px) {
+                font-size: 48px;
+            }
+
+            @media screen and (max-width: 360.01px) {
+                font-size: 40px;
+            }
 
             a {
                 color: inherit;
             }
         }
 
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            
+            @media screen and (max-width: 1050.01px) {
+                align-items: center;
+                margin-bottom: 24px;
+            }
+
+            li {
+                font-size: 20px;
+                line-height: 28px;
+                text-transform: uppercase;
+                @media screen and (max-width: 1050.01px) {
+                    text-align: center;
+                }
+
+                @media screen and (max-width: 540.01px) {
+                    font-size: 18px;
+                }
+
+                font-family: 'Roboto',sans-serif;
+            }
+        }
+
         .section-info {
-            font-size: 18px;
             line-height: 24px;
             font-family: 'Roboto', sans-serif;
             text-align: center;
+            flex-basis: 100%;
+            font-size: 20px;
+
+            @media screen and (max-width: 540.01px) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -41,6 +80,8 @@ html, body {
         padding: 36px 0;
         z-index: 1;
         color: #fff;
+
+        min-height: 600px;
 
         @include _blackout();
         
@@ -54,7 +95,6 @@ html, body {
             display: none;
             flex-direction: column;
             align-items: center;
-            max-width: 540px;
             padding: 8px;
             width: 100%;
         
@@ -62,12 +102,16 @@ html, body {
                 display: flex;
             }
 
-            input {
+            input, select, textarea {
                 padding: 6px;
                 border: 1px solid #fff;
                 font-size: 18px;
                 line-height: 20px;
                 font-family: 'Exo 2', sans-serif;
+            }
+
+            textarea {
+                min-height: 100px;
             }
 
             h2 {
@@ -117,6 +161,7 @@ html, body {
 
     &-questions {
         width: 100%;
+        max-width: 540px;
     }
 
     &-final {
@@ -173,7 +218,50 @@ html, body {
         margin-bottom: 36px;
     }
 
-    &-footer {
-        padding: 16px;
-    }
+     &-footer {
+         padding: 24px;
+
+         @media screen and (max-width: 880.01px) {
+             padding: 24px 0;
+         }
+
+         .section-title {
+             font-size: 48px;
+             text-transform: uppercase;
+
+             @media screen and (max-width: 880.01px) {
+                font-size: 40px;
+             }
+
+             a {
+                 color: #000000;
+             }
+         }
+
+         .section-info {
+             font-size: 24px;
+             text-transform: uppercase;
+             order: 2;
+         }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            @media screen and (max-width: 880.01px) {
+                flex-direction: column;
+                gap: 16px;
+                justify-content: unset;
+            }
+        }
+
+         .logo {
+             display: flex;
+             max-width: 240px;
+             order: 1;
+         }
+     }
 }
+

@@ -105,7 +105,7 @@
         max-width: 300px;
         width: 100%;
         background-color: transparent;
-        border: 3px solid #ef4135;
+        border: 3px solid #ffbf00;
         padding: 12px 0;
         font-size: 24px;
         color: #333;
@@ -117,7 +117,7 @@
         &:focus {
           transform-origin: center;
           transition: 0.4s background-color, 0.4s color;
-          background-color: #ef4135;
+          background-color: #ffbf00;
           color: #fff;
         }
       }
@@ -137,6 +137,10 @@
         padding: 10px 16px;
         border: 1px solid black;
         font-family: "Exo 2", sans-serif;
+
+        &.form-control-2x {
+            min-height: 100px;
+        }
 
         @media screen and (max-width: 540.01px) {
           font-size: 18px;

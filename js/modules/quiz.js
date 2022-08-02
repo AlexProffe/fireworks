@@ -1,11 +1,13 @@
+import {addClassesToElement, createElementWithOptions, generateRandomID} from "./utils.js";
+
 const defaultConfig = {
-    quizID: Math.floor(Math.random() * new Date().getTime()),
+    quizID: generateRandomID(),
     questions: [
         {
             questionConfig: {
-                name: {
+                bio: {
                     field: 'text',
-                    label: 'Имя',
+                    label: 'Фио',
                     required: true,
                 },
                 phone: {
@@ -13,32 +15,36 @@ const defaultConfig = {
                     label: 'Телефон',
                     required: true,
                 },
-                sex: {
-                    field: 'radio',
-                    label: 'Пол',
-                    fieldValue: [
-                        {
-                            value: 'M',
-                            label: 'Мужчина',
-                            default: true,
-                        },
-                        {
-                            value: 'W',
-                            label: 'Женщина',
-                        }
-                    ]
+                info: {
+                    field: 'textarea',
+                    label: 'Ваше сообщение',
                 }
             },
-            questionTitle: 'Название карточки',
-            questionInfo: 'Описание карточки',
+            questionTitle: 'Личные данные',
+            questionInfo: 'Эти данные нам нужны, чтобы с вами связался менеджер',
             id: 1,
         },
         {
             questionConfig: {
-                info: {
+                test2: {
                     field: 'text',
                     label: 'Инфо',
                 },
+                test: {
+                    field: 'dropdown',
+                    label: 'Выберите любимое блюдо',
+                    fieldValue: [
+                        {
+                            value: 'пирог',
+                            label: 'Яблочный пирог',
+                            default: true,
+                        },
+                        {
+                            value: 'картошка',
+                            label: 'Картошка',
+                        }
+                    ]
+                }
             },
             questionTitle: 'Название карточки',
             questionInfo: 'Описание карточки',
@@ -49,34 +55,36 @@ const defaultConfig = {
 
 export function generateQuiz(config) {
     const mergedConfig = {...defaultConfig, ...config};
-    const { quizID, questions } = mergedConfig;
+    const {quizID, questions} = mergedConfig;
     const quizWrapper = document.querySelector('.quiz-questions');
     const prevButton = document.getElementById('quiz-prev');
     const answers = {};
     const nextButton = document.getElementById('quiz-next');
+    const headerLogo = document.querySelector('.section-title a');
 
     prevButton.addEventListener('click', handlePrevClick);
     nextButton.addEventListener('click', handleNextClick);
-    
+
 
     let questionIndex = 0;
 
     questions.forEach(question => {
         quizWrapper.insertAdjacentElement('beforeend', generateQuestion(question));
     });
-    
+
     quizWrapper.insertAdjacentElement('beforeend', generateFinalQuestion());
 
     const questionElements = quizWrapper.querySelectorAll('.question');
     const finalElement = quizWrapper.querySelector('.quiz-final');
-    questionElements[questionIndex].classList.add('visible');
+    addClassesToElement(questionElements[questionIndex], ['visible']);
 
 
     function generateQuestion(question) {
-        const { id, questionTitle: title, questionInfo: info, questionConfig } = question;
+        const {id, questionTitle: title, questionInfo: info, questionConfig} = question;
 
         const questionWrapper = createElementWithOptions('form', {id: `question-${id}`});
-        questionWrapper.classList.add('question');
+        addClassesToElement(questionWrapper, ['question']);
+
         const questionTitle = createElementWithOptions('h2', {textContent: title})
         const questionInfo = createElementWithOptions('p', {textContent: info});
 
@@ -84,52 +92,53 @@ export function generateQuiz(config) {
         questionWrapper.insertAdjacentElement('beforeend', questionInfo);
 
         const questionsFormControls = generateQuestionsForm(questionConfig);
-        
+
         questionsFormControls.forEach(control => questionWrapper.insertAdjacentElement('beforeend', control));
 
         const errorsBlock = createElementWithOptions('div');
-        errorsBlock.classList.add('hidden');
-        errorsBlock.classList.add('form-errors');
-        
+        addClassesToElement(errorsBlock, ['hidden', 'form-errors']);
+
         questionWrapper.insertAdjacentElement('beforeend', errorsBlock);
         return questionWrapper;
     }
 
     function generateQuestionsForm(config) {
         const controls = Object.keys(config).reduce((prev, curr) => {
-            if(config[curr].fieldValue && config[curr].fieldValue.length) {
-                const rootElement = createElementWithOptions('div', {textContent: config[curr].label});
-                config[curr].fieldValue.forEach(fieldValue => {
-                    const elementID = Math.floor(Math.random() * new Date().getTime());
-                    const element = createElementWithOptions('label', {for: elementID, textContent: fieldValue.label});
-                    const inputElement = createElementWithOptions('input', {
-                        name: curr, 
-                        type: config[curr].field, 
-                        value: fieldValue.value,
-                        checked: fieldValue.default
-                    });
-                    element.insertAdjacentElement('beforeend', inputElement);
-                    rootElement.insertAdjacentElement('beforeend',element);
-                });
-                prev.push(rootElement);
-                return prev;
+            const controlType = config[curr].field;
+            let element;
+            switch (controlType) {
+                case 'text': {
+                    element = generateTextField(curr, config[curr]);
+                    break;
+                }
+
+                case 'radio':
+                case 'checkbox': {
+                    element = generateRadioOrCheckboxField(curr, config[curr]);
+                    break;
+                }
+
+                case 'dropdown':
+                case 'multiple-dropdown': {
+                    element = generateDropdownField(curr, config[curr]);
+                    break;
+                }
+                case 'textarea': {
+                    element = generateTextAreaField(curr, config[curr]);
+                }
             }
-            const elementID = Math.floor(Math.random() * new Date().getTime());
-            const element = createElementWithOptions('label', {for: elementID, textContent: config[curr].label + (config[curr].required ? ' *' : '')});
-            const inputElement = createElementWithOptions('input', {name: curr, type: config[curr].field, value: config[curr].value ?? '', required: config[curr].required });
-            element.insertAdjacentElement('beforeend', inputElement);
-            
+
             prev.push(element);
             return prev;
-        }, []) 
+        }, [])
 
         return controls;
     }
 
     function handlePrevClick() {
-       --questionIndex;
+        --questionIndex;
 
-        if(questionIndex >= 0) {
+        if (questionIndex >= 0) {
             nextButton.textContent = 'Следующий';
             questionElements.forEach(question => question.classList.remove('visible'));
             questionElements[questionIndex].classList.add('visible');
@@ -144,17 +153,17 @@ export function generateQuiz(config) {
         const form = questionElements[questionIndex];
         const errorsWrapper = form.querySelector('.form-errors');
         errorsWrapper.innerHTML = '';
-        if(form.checkValidity()) {
+        if (form.checkValidity()) {
             questionElements.forEach(question => question.classList.remove('visible'));
             return true;
-        } 
-        
-        for(let i = 0; i < form.length; i++) {
+        }
+
+        for (let i = 0; i < form.length; i++) {
             const item = form[i];
 
 
-            if(item.validity.valueMissing) {
-                
+            if (item.validity.valueMissing) {
+
                 errorsWrapper.insertAdjacentHTML('beforeend', `<p class='form-error'>
                     Поле ${questions[questionIndex].questionConfig[item.name].label} обязательно для заполнения
                 </p>`)
@@ -166,29 +175,28 @@ export function generateQuiz(config) {
     function handleNextClick() {
         checkFormValue() && ++questionIndex;
 
-        const form = questionElements[questionIndex - 1];
-        for(let i = 0; i < form.length; i++) {
+        const form = questionElements[questionIndex - 1 || 0];
+        for (let i = 0; i < form.length; i++) {
             const item = form[i];
 
-            if(item.checked) {
+            if (item.checked) {
                 answers[item.name] = item.value;
             } else {
                 answers[item.name] = item.value;
             }
-            
+
         }
 
-        if(questionIndex === questions.length) {
+        if (questionIndex === questions.length) {
             pickFinal();
             return;
         }
 
-        
 
-        if(questionIndex <= questions.length - 1) {
+        if (questionIndex <= questions.length - 1) {
             nextButton.textContent = 'Следующий';
 
-            if(questionIndex === questions.length - 1) {
+            if (questionIndex === questions.length - 1) {
                 nextButton.textContent = 'Отправить'
             }
 
@@ -198,15 +206,24 @@ export function generateQuiz(config) {
         }
         questionIndex = questions.length - 1;
 
-     
+
         nextButton.classList.add('hidden');
     }
 
     function pickFinal() {
-        questionElements.forEach(question => question.classList.remove('visible'));
+        questionElements.forEach(question => {
+            question.classList.remove('visible');
+            for(let i = 0; i < question.length; i++) {
+                const item = question[i];
+                item.value = '';
+            }
+        });
         finalElement.classList.add('visible');
         nextButton.classList.add('hidden');
         prevButton.classList.add('hidden');
+        setTimeout(() => {
+            headerLogo.click();
+        }, 10000)
         console.log(answers);
     }
 
@@ -220,8 +237,67 @@ export function generateQuiz(config) {
         return finalElement;
     }
 
-    function createElementWithOptions(tagName, options) {
-        const element = document.createElement(tagName);
-        return Object.assign(element, options);
+    function generateTextField(key, element) {
+        const elementID = generateRandomID();
+        const rootElement = createElementWithOptions('label', {
+            for: elementID,
+            textContent: element.label + (element.required ? ' *' : '')
+        });
+        const inputElement = createElementWithOptions('input', {
+            name: key,
+            type: element.field,
+            value: element.value ?? '',
+            required: element.required
+        });
+        rootElement.insertAdjacentElement('beforeend', inputElement);
+
+        return rootElement;
+    }
+
+    function generateRadioOrCheckboxField(key, element) {
+        const rootElement = createElementWithOptions('div', {textContent: element.label});
+        element.fieldValue.forEach(fieldValue => {
+            const elementID = generateRandomID();
+            const labelElement = createElementWithOptions('label', {for: elementID, textContent: fieldValue.label});
+            const inputElement = createElementWithOptions('input', {
+                name: key,
+                type: element.field,
+                value: fieldValue.value,
+                checked: fieldValue.default
+            });
+
+            labelElement.insertAdjacentElement('beforeend', inputElement);
+            rootElement.insertAdjacentElement('beforeend', labelElement);
+        });
+
+        return rootElement;
+    }
+
+    function generateDropdownField(key, element) {
+        const elementID = generateRandomID();
+        const rootElement = createElementWithOptions('label', {for: elementID});
+        const selectElement = createElementWithOptions('select', {id: elementID, name: key});
+        element.fieldValue.forEach(fieldValue => {
+            const optionElement = createElementWithOptions('option', {
+                textContent: fieldValue.label,
+                value: fieldValue.value,
+                selected: !!fieldValue.required,
+            });
+            selectElement.insertAdjacentElement('beforeend', optionElement);
+        });
+        rootElement.insertAdjacentElement('beforeend', selectElement);
+        return rootElement;
+    }
+
+    function generateTextAreaField(key, element) {
+        const elementID = generateRandomID();
+        const rootElement = createElementWithOptions('label', {for: elementID, textContent: element.label});
+        const inputElement = createElementWithOptions('textarea', {
+            id: elementID,
+            name: key,
+            required: element.required,
+        });
+        rootElement.insertAdjacentElement('beforeend', inputElement);
+        return rootElement;
     }
 }

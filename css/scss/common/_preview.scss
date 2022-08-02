@@ -49,6 +49,12 @@
             display: flex;
             justify-content: center;
             width: 100%;
+
+            iframe {
+                @media screen and (max-width: 568.01px) {
+                    width: auto!important;
+                }
+            }
         }
 
         &__title {

@@ -21,8 +21,8 @@
       transform-origin: center;
       transition: 0.4s background-color, 0.4s color;
       background-color: #fff;
-      color: #ef4135;
-      border-color: #ef4135;
+      color: #ffbf00;
+      border-color: #ffbf00;
     }
 
     @media screen and (max-width: 640px) {
@@ -116,7 +116,7 @@
 
   .header-socials {
     align-self: flex-start;
-    margin-bottom: 0;
+    margin: 24px 0;
 
     .header-social {
       font-size: 40px;

@@ -22,7 +22,6 @@ export function filter(selectorKey = '.filter') {
     })
 
     gridItems.forEach(gridItem => {
-
         const button = gridItem.querySelector('button');
         button.addEventListener('click', openPreview);
     })
@@ -59,7 +58,7 @@ export function filter(selectorKey = '.filter') {
         if(isItemsAreIncludesInSecondArray(currentValues, selectedCategories)) {
             selectedCategories = currentValues;
             return;
-        };
+        }
 
         selectedCategories = currentValues;
 
@@ -85,7 +84,7 @@ export function filter(selectorKey = '.filter') {
     function convertDomItemToGridItemModel(domItem) {
         const id = domItem.querySelector('button').dataset.itemId;
         const name = domItem.querySelector('h2').textContent;
-        const image = domItem.querySelector('img').src;
+        const image = domItem.querySelector('img')?.src ?? domItem.querySelector('iframe');
         const category = domItem.dataset.itemCategory;
         return {
             item: domItem,
@@ -146,11 +145,18 @@ export function filter(selectorKey = '.filter') {
         const previewItem = document.createElement('div');
         previewItem.classList.add('preview-item');
         
-        const previewImage = createElementWithOptions('img', {src: item.image});
-
+        const previewImage = typeof item.image === 'string' ?
+            createElementWithOptions('img', {src: item.image})
+            : item.image;
         if(previewImage.width / previewImage.height > 1) {
             previewItem.style.height = 'auto';
             previewItem.style.maxHeight = '100%';
+        }
+
+        if(isNaN(previewImage.width / previewImage.height)) {
+            console.log(previewImage.width / previewImage.height);
+            const proportionalWidth = Math.floor(window.outerWidth * 0.9);
+            previewImage.style.width = `${proportionalWidth}px`;
         }
 
         previewImage.addEventListener('click', preventContentClick);

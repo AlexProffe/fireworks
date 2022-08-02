@@ -2,15 +2,24 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer-6.6.3/src/Exception.php';
-require 'PHPMailer-6.6.3/src/PHPMailer.php';
+require_once 'PHPMailer-6.6.3/src/Exception.php';
+require_once 'PHPMailer-6.6.3/src/PHPMailer.php';
+require_once 'PHPMailer-6.6.3/src/SMTP.php';
 
 $mail = new PHPMailer(true);
-$mail->CharSet = 'UTF-8';
-$mail->setLanguage('ru', 'PHPMailer-6.6.3/language/');
+
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+$mail->SMTPDebug = 0;$mail->CharSet = 'UTF-8';
+
+$mail->Host = 'mailbe05.hoster.by';
+$mail->Port = 465;
+$mail->Username = 'admin@1.vipsalut.by';
+$mail->Password = 'Pse#MO@k02';
+
 $mail->isHTML(true);
 
-$mail->setFrom('info@fls.guru', 'Белый тигр');
+$mail->setFrom('admin@1.vipsalut.by', 'Белый тигр');
 
 $mail->addAddress('1840002@mail.ru');
 $mail->addAddress('salut-show@mail.ru');
